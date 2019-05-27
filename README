@@ -1,0 +1,21 @@
+README
+================================================================
+The code currently is a property of Bloomberg L.P. and is meant 
+to be used as a tool for truobleshooting network issues.
+
+AUTHOR
+===============================================================
+Pranay B. Kolakkar (pkolakkar@bloomberg.net)
+
+INSTRUCTIONS FOR USE
+===============================================================
+1. Build the .ko files by running make in the directory that has 
+the Makefile and the C code
+
+2. You would see .ko file in the same directory
+
+3. This is a pluggable module, hence use insmod to insert it
+	bash> insmod <module_name>.ko
+
+4. cat the procfile 
+        bash> cat /proc/bbtcpstat
