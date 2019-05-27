@@ -1,0 +1,11 @@
+README
+1. Build the .ko files by running make in the directory that has 
+the Makefile and the C code
+
+2. You would see .ko file in the same directory
+
+3. This is a pluggable module, hence use insmod to insert it
+	bash> insmod <module_name>.ko
+
+4. cat the procfile 
+        bash> cat /proc/tcpstat

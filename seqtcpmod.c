@@ -25,8 +25,7 @@
 
 
 #define DRIVER_AUTHOR "Pranay B. Kolakkar"
-#define DRIVER_DESC "Bloomberg LP Module for extracting the TCP statistics for each process per TCP socket it uses"
-#define SUPPORTED_DEV "Dell/HP Bloomberg Appliances"
+#define DRIVER_DESC "Module for extracting the TCP statistics for each process per TCP socket it uses"
 #define MODULE_VERSION_NUMBER "1.0"
 
 MODULE_LICENSE("GPL");
@@ -241,7 +240,7 @@ static struct file_operations ct_file_ops = {
 
 static int ct_init(void){
      struct proc_dir_entry *entry;
-     entry = create_proc_entry("bbtcpstat", 0, NULL);
+     entry = create_proc_entry("alltcpstat", 0, NULL);
 
      if (entry)
          entry->proc_fops = &ct_file_ops;
@@ -251,7 +250,7 @@ static int ct_init(void){
 
 static void ct_exit(void)
 {
-    remove_proc_entry("bbtcpstat", NULL);
+    remove_proc_entry("alltcpstat", NULL);
 }
 
 struct files_struct *get_files_struct(struct task_struct *task){
